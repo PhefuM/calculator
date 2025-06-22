@@ -14,9 +14,9 @@
             </td>
         </tr>
         <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
+            <td onclick="digitBtnPressed(7)">7</td> 
+            <td onclick="digitBtnPressed(8)">8</td>
+            <td onclick="digitBtnPressed(9)">9</td>
             <td>x</td>
         </tr>
          <tr>
@@ -42,6 +42,21 @@
         </tr>
          
     </table>
+    <script>
+        var newLine = true;
+
+        function digitBtnPressed(button){
+            if(newLine){
+                document.getElementById("inputBox").value = button;
+                newLine = false; /*anything that follows after newline will be false */
+            } else {
+                var currentValue = document.getElementById("inputBox").value; /* used concatination to ensure numbers selected stay on the screen */
+            document.getElementById("inputBox").value = currentValue + button;
+            }
+        }
+
+       
+    </script>
     
 </body>
 </html>
